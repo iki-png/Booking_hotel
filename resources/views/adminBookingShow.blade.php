@@ -2,11 +2,11 @@
  
 @section('content')
 
-<div class="container">
+<div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header bg-danger text-light">{{ __('HALAMAN LAYANAN') }}</div>
+        <div class="col-md-8">
+            <div class="card shadow-lg">
+                <div class="card-header bg-primary text-light text-center">{{ __('HALAMAN LAYANAN') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,104 +14,87 @@
                             {{ session('status') }}
                         </div>
                     @endif
- 
+
                     <div class="container mt-5 mb-5">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="card border-0">
+                                <div class="card border-0 rounded-3">
                                     <div class="card-body">
                                         <form action="#" method="POST" enctype="multipart/form-data">
-                                        
+
                                             @csrf
 
-                                        <hr>
-                                            <div class="form-group mb-3">
-                                                <label class="font-weight-bold">CUSTOMER</label>
+                                            <div class="mb-4">
+                                                <label class="form-label font-weight-bold">CUSTOMER</label>
                                                 <input type="text" class="form-control" value="{{ $bookings->user->name }}" readonly>
                                                 <input type="hidden" class="form-control" name="id_user" value="{{ $bookings->id_user }}" readonly>
-
                                             </div>
 
-<hr>
-                                            <div class="form-group mb-3">
-                                                <label class="font-weight-bold">HOTEL</label>
+                                            <hr>
+
+                                            <div class="mb-4">
+                                                <label class="form-label font-weight-bold">HOTEL</label>
                                                 <input type="text" class="form-control" value="{{ $bookings->hotel->nama_hotel }}" readonly>
                                                 <input type="hidden" class="form-control" name="kode_hotel" value="{{ $bookings->kode_hotel }}" readonly>
                                             </div>
 
                                             <div class="row"> 
-
                                                 <div class="col-md-6">
-                                                    <div class="form-group mb-3">
-                                                        <label class="font-weight-bold">KAMAR</label>
+                                                    <div class="mb-4">
+                                                        <label class="form-label font-weight-bold">KAMAR</label>
                                                         <input type="text" class="form-control" value="{{ $bookings->kamar->nama_kamar }}" readonly>
                                                         <input type="hidden" class="form-control" name="kode_kamar" value="{{ $bookings->kode_kamar }}" readonly>
-
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-6">
-                                                    <div class="form-group mb-3">
-                                                        <label class="font-weight-bold">HARGA KAMAR</label>
+                                                    <div class="mb-4">
+                                                        <label class="form-label font-weight-bold">HARGA KAMAR</label>
                                                         <input type="text" class="form-control" value="{{ $bookings->kamar->harga_kamar }}" readonly>
                                                     </div>
                                                 </div>
-
                                             </div>
 
                                             <div class="row"> 
-
-                                                    <div class="col-md-6">
-                                                        <div class="form-group mb-3">
-                                                            <label class="font-weight-bold">LAYANAN</label>
-                                                            <input type="text" class="form-control" value="{{ $bookings->layanan->nama_layanan }}" readonly>
-                                                            <input type="hidden" class="form-control" name="kode_layanan" value="{{ $bookings->kode_layanan }}" readonly>
-                                                        </div>
+                                                <div class="col-md-6">
+                                                    <div class="mb-4">
+                                                        <label class="form-label font-weight-bold">LAYANAN</label>
+                                                        <input type="text" class="form-control" value="{{ $bookings->layanan->nama_layanan }}" readonly>
+                                                        <input type="hidden" class="form-control" name="kode_layanan" value="{{ $bookings->kode_layanan }}" readonly>
                                                     </div>
+                                                </div>
 
-                                                    <div class="col-md-6">
-                                                        <div class="form-group mb-3">
-                                                            <label class="font-weight-bold">HARGA LAYANAN</label>
-                                                            <input type="text" class="form-control" value="{{ $bookings->layanan->harga_layanan }}" readonly>
-                                                        </div>
+                                                <div class="col-md-6">
+                                                    <div class="mb-4">
+                                                        <label class="form-label font-weight-bold">HARGA LAYANAN</label>
+                                                        <input type="text" class="form-control" value="{{ $bookings->layanan->harga_layanan }}" readonly>
                                                     </div>
-
+                                                </div>
                                             </div>
 
-                                                    <div class="form-group mb-3">
-                                                        
-                                                            <label class="font-weight-bold">Durasi Menginap</label>
-                                                            
-                                                            <input type="text" class="form-control" name="durasi_menginap" value="{{ $bookings->durasi_menginap }}" readonly>
-                                                            
-                                                    </div>
-<hr>
-
-
-                                                <div class="form-group mb-3">
-                                                            <label class="font-weight-bold">TOTAL TAGIHAN</label>
-                                                            <input type="text" class="form-control" name="total_tagihan" value="{{ $bookings->total_tagihan }}" readonly>
-                                                    </div>
-
-                                                    <div class="form-group mb-3">
-                                                            <label class="font-weight-bold">STATUS BOOKING</label>
-                                                            <input type="text" class="form-control" name="status_bk" value="Menunggu Konfirmasi" readonly>
-                                                    </div>
-
-                                                    
-
+                                            <div class="mb-4">
+                                                <label class="form-label font-weight-bold">Durasi Menginap</label>
+                                                <input type="text" class="form-control" name="durasi_menginap" value="{{ $bookings->durasi_menginap }}" readonly>
+                                            </div>
 
                                             <hr>
 
+                                            <div class="mb-4">
+                                                <label class="form-label font-weight-bold">TOTAL TAGIHAN</label>
+                                                <input type="text" class="form-control" name="total_tagihan" value="{{ $bookings->total_tagihan }}" readonly>
+                                            </div>
 
-                                            <div class="modal-footer">
-                                                        <a href="/admin/booking" class="btn btn-md btn-basic me-4">BACK</a>
+                                            <div class="mb-4">
+                                                <label class="form-label font-weight-bold">STATUS BOOKING</label>
+                                                <input type="text" class="form-control" name="status_bk" value="Menunggu Konfirmasi" readonly>
+                                            </div>
 
-                                                        <div class="btn-group">
-                                                            <a href="/admin/booking" class="btn btn-md btn-danger me-4">OK</a>
-                                                        </div>	
+                                            <hr>
 
-                                                    </div>   
+                                            <div class="d-flex justify-content-between">
+                                                <a href="/admin/booking" class="btn btn-outline-primary btn-md">Kembali</a>
+                                                <a href="/admin/booking" class="btn btn-primary btn-md">OK</a>
+                                            </div>
 
                                         </form> 
                                     </div>
@@ -119,10 +102,6 @@
                             </div>
                         </div>
                     </div>
-
-
-
-
 
                 </div>
             </div>
@@ -140,8 +119,6 @@
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
 <!-- Tambahkan JavaScript Select2 -->
- 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <script type="text/javascript">

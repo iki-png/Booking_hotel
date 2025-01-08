@@ -1,12 +1,12 @@
 @extends('layouts.user_app')
- 
+
 @section('content')
 
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header bg-danger text-light">{{ __('HALAMAN LAYANAN') }}</div>
+                <div class="card-header bg-success text-light">{{ __('HALAMAN LAYANAN') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +14,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
- 
+
                     <div class="container mt-5 mb-5">
                         <div class="row">
                             <div class="col-md-12">
@@ -32,7 +32,7 @@
 
                                             </div>
 
-<hr>
+                                        <hr>
                                             <div class="form-group mb-3">
                                                 <label class="font-weight-bold">HOTEL</label>
                                                 <input type="text" class="form-control" value="{{ $bookings->hotel->nama_hotel }}" readonly>
@@ -85,7 +85,7 @@
                                                             <input type="text" class="form-control" name="durasi_menginap" value="{{ $bookings->durasi_menginap }}" readonly>
                                                             
                                                     </div>
-<hr>
+                                        <hr>
 
 
                                                 <div class="form-group mb-3">
@@ -105,11 +105,11 @@
 
 
                                             <div class="modal-footer">
-                                                        <a href="/user/booking" class="btn btn-md btn-basic me-4">BACK</a>
+                                                        <a href="/user/booking" class="btn btn-md btn-outline-success me-4">BACK</a>
 
                                                         <div class="btn-group">
-                                                            <a href="/user/booking" class="btn btn-md btn-danger me-4">OK</a>
-                                                        </div>	
+                                                            <a href="/user/booking" class="btn btn-md btn-success me-4">OK</a>
+                                                        </div>    
 
                                                     </div>   
 
@@ -119,10 +119,6 @@
                             </div>
                         </div>
                     </div>
-
-
-
-
 
                 </div>
             </div>
